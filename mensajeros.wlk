@@ -1,4 +1,4 @@
-object mensajeria {
+object paquete {
   var mensajero  = jeanGray
   var destino = laMatrix
   var estaPago = false 
@@ -24,7 +24,7 @@ object laMatrix {
 }
 object puenteDeBrooklyn {
   method dejarPasar(mensajero) {
-	return mensajero.pesoActual() <= 100
+	return mensajero.pesoActual() <= 1000
   }
 }
 object jeanGray {

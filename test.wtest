@@ -2,39 +2,39 @@ import mensajeros.*
 
 describe "george"{ 
     test "george no pudo enviar su paquete a la matrix" {
-        mensajeria.persona(neo)
-        mensajeria.destinoPaquete(laMatrix)
-        assert.equals(false, mensajeria.puedeSerEntregado())
+        paquete.persona(neo)
+        paquete.destinoPaquete(laMatrix)
+        assert.equals(false, paquete.puedeSerEntregado())
     }
 }
 
 describe " 2do paquete de george "{
     test "george pudo enviar el  paquete a la matrix "{
-         mensajeria.pagar()
-        mensajeria.destinoPaquete(laMatrix)
-        mensajeria.persona(jeanGray)
-        assert.equals(true, mensajeria.puedeSerEntregado())
+         paquete.pagar()
+        paquete.destinoPaquete(laMatrix)
+        paquete.persona(jeanGray)
+        assert.equals(true, paquete.puedeSerEntregado())
     }
 }
 describe "3er paquete de george" {
   test "george  no pudo enviar su paquete a brooklyn"{
-    mensajeria.pagar()
-    mensajeria.destinoPaquete(puenteDeBrooklyn)
-    mensajeria.persona(saraConnor)
+    paquete.pagar()
+    paquete.destinoPaquete(puenteDeBrooklyn)
+    paquete.persona(saraConnor)
     saraConnor.vehiculo(camion)
     camion.cantidadDeAcoplados(1)
     saraConnor.peso(70)
-    assert.equals(false, mensajeria.puedeSerEntregado())
+    assert.equals(false, paquete.puedeSerEntregado())
   }
   }
 
 describe "4to paquete de george" {
   test "george pudo enviar su paquete a brooklyn"{
-    mensajeria.pagar()
-    mensajeria.destinoPaquete(puenteDeBrooklyn)
-    mensajeria.persona(saraConnor)
+    paquete .pagar()
+    paquete.destinoPaquete(puenteDeBrooklyn)
+    paquete.persona(saraConnor)
     saraConnor.vehiculo(moto)
-    assert.equals(true, mensajeria.puedeSerEntregado())
+    assert.equals(true, paquete.puedeSerEntregado())
   }
   }
 
