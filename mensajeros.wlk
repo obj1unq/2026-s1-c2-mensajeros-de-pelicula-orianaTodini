@@ -53,7 +53,7 @@ object saraConnor {
   var peso= 0
   var vehiculo = camion  
   method peso(_peso) {
-	peso= _peso + vehiculo.peso()	
+	peso= _peso 	
   }
   method vehiculo(_vehiculo) {
 	vehiculo= _vehiculo
@@ -69,19 +69,17 @@ object saraConnor {
 
 object camion {
   var cantidadDeAcoplados = 0  
-  method peso() {
-  return if (self.tieneAcoplados()) {
-    500 + 500 * cantidadDeAcoplados
-  } else {
-    500
-    } 
-    }
-  method tieneAcoplados() {
-  return cantidadDeAcoplados > 0
-  }
+ method peso() { 
+  return self.pesoPropio() + self.pesoPorAcoplados()}
 
   method cantidadDeAcoplados(cantidad){
 	cantidadDeAcoplados =  cantidad
+  }
+  method pesoPropio() {
+    return 500
+  }
+  method pesoPorAcoplados() {
+    return self.pesoPropio() * cantidadDeAcoplados
   }
 }
 
