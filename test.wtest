@@ -1,0 +1,41 @@
+import mensajeros.*
+
+describe "george"{ 
+    test "george no pudo enviar su paquete a la matrix" {
+        paquete.persona(neo)
+        paquete.destinoPaquete(laMatrix)
+        assert.equals(false, paquete.puedeSerEntregado())
+    }
+}
+
+describe " 2do paquete de george "{
+    test "george pudo enviar el  paquete a la matrix "{
+         paquete.pagar()
+        paquete.destinoPaquete(laMatrix)
+        paquete.persona(jeanGray)
+        assert.equals(true, paquete.puedeSerEntregado())
+    }
+}
+describe "3er paquete de george" {
+  test "george  no pudo enviar su paquete a brooklyn"{
+    paquete.pagar()
+    paquete.destinoPaquete(puenteDeBrooklyn)
+    paquete.persona(saraConnor)
+    saraConnor.vehiculo(camion)
+    camion.cantidadDeAcoplados(1)
+    saraConnor.peso(70)
+    assert.equals(false, paquete.puedeSerEntregado())
+  }
+  }
+
+describe "4to paquete de george" {
+  test "george pudo enviar su paquete a brooklyn"{
+    paquete .pagar()
+    paquete.destinoPaquete(puenteDeBrooklyn)
+    paquete.persona(saraConnor)
+    saraConnor.vehiculo(moto)
+    assert.equals(true, paquete.puedeSerEntregado())
+  }
+  }
+
+
